@@ -6,6 +6,9 @@
   z-index: 3;
   opacity: 0;
 }
+.crdBtn:focus {
+  outline: none;
+}
 .crdBtn:hover {
   background: rgba(255, 255, 255, 0.3);
   opacity: 1;
