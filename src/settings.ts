@@ -22,6 +22,13 @@ const settings: settingsType = {
     breaks: [41, 83, 124, 166, 207, 244],
     bSided: [],
   },
+  IN4: {
+    code: "IN4",
+    path: "IN4_ELDRITCH_MOON",
+    cardsTotal: 205,
+    breaks: [12, 48, 80, 114, 149, 180],
+    bSided: [],
+  },
   KLD: {
     code: "KLD",
     path: "KLD_KALDHEIM",
