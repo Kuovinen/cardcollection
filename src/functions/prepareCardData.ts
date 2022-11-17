@@ -1,6 +1,6 @@
 import { settingsType } from "../settings"; //just the type
-function prepareCardData(settings: settingsType) {
-  const setName: string = "KLD";
+function prepareCardData(settings: settingsType, setCode: string) {
+  const setName: string = setCode;
   const setSettings = settings[setName];
   //breaks = last card in every column
   const numberOfColums = setSettings.breaks.length;

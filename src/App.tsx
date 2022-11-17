@@ -5,16 +5,26 @@ import settings from "./settings";
 import prepareCardData from "./functions/prepareCardData";
 import extractFileNameFromPath from "./functions/extractFileNameFromPath";
 function App() {
-  const cardPaths = prepareCardData(settings);
+  const setCode = "IN1";
+  const cardPaths = prepareCardData(settings, setCode);
 
   return (
     <div className="App">
-      {cardPaths.map((array) => (
-        <div className="cardsColumn d-flex flex-wrap mb-2">
+      {cardPaths.map((array, index) => (
+        <div
+          key={index /*index should be fine because order MUST NEVER change*/}
+          className="cardsColumn d-flex flex-wrap mb-2"
+        >
           {array.map((cardPath) => {
             const data: { key: string; cardNumber: string } =
               extractFileNameFromPath(cardPath);
-            return <Card img={cardPath} cardNumber={data.cardNumber} />;
+            return (
+              <Card
+                key={data.key}
+                img={cardPath}
+                cardNumber={data.cardNumber}
+              />
+            );
           })}
         </div>
       ))}

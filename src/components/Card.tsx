@@ -14,7 +14,7 @@ function Card(props: props) {
     height: `${mtgCardSize.height * scaleCoeff}rem`,
     width: `${mtgCardSize.width * scaleCoeff}rem`,
     backgroundSize: `contain`,
-    opacity: `${amount === 0 ? "1" : "0.3"}`,
+    opacity: `${amount === 0 ? "1" : "0.2"}`,
   };
   const amountIndicatorStyle = {
     display: `${amount === 0 ? "none" : "block"}`,
@@ -34,7 +34,7 @@ function Card(props: props) {
         opacity: "1",
       }}
     >
-      <div className="position-absolute" style={cardBKG}></div>
+      <div className="cardBKG position-absolute" style={cardBKG}></div>
       <small className="position-absolute text-light bg-dark rounded d-inline-block m-1 px-1">
         {props.cardNumber}
       </small>
