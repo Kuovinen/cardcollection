@@ -1,0 +1,23 @@
+.crdBtn {
+  background: none;
+  border: none;
+  font-weight: 1000;
+  height: 100%;
+  z-index: 3;
+  opacity: 0;
+}
+.crdBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+.crdAmount {
+  position: absolute;
+  color: white;
+  border: white 0.1rem solid;
+  border-radius: 0.2rem;
+  padding: 0 0.2rem;
+  margin: 0.2rem;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+}

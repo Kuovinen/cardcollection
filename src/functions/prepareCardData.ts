@@ -1,4 +1,4 @@
-import { settingsType } from "./settings"; //just the type
+import { settingsType } from "../settings"; //just the type
 function prepareCardData(settings: settingsType) {
   const setName: string = "KLD";
   const setSettings = settings[setName];
