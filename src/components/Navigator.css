@@ -1,0 +1,18 @@
+nav > div > button {
+  background: none;
+  border: none;
+}
+nav > div > button:active {
+  transform: scale(0.9);
+}
+nav > div > button:focus {
+  border: none;
+  outline: none;
+}
+nav > div {
+  background: black;
+  padding: 0.25rem;
+}
+nav {
+  margin-bottom: 1rem;
+}
