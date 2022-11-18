@@ -40,7 +40,7 @@ function Card(props: props) {
       {/*CONTAINER for the IMAGE of the card itself*/}
       <div className="cardBKG position-absolute" style={cardBKG}></div>
       {/*Card NUMBER*/}
-      <small className="position-absolute text-light bg-dark rounded d-inline-block m-1 px-1">
+      <small className="position-absolute text-light bg-dark rounded d-inline-block m-1 px-1 user-select-none">
         {props.cardNumber}
       </small>
       {/*Amount changing BUTTONS*/}
