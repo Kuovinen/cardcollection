@@ -3,10 +3,11 @@ import React from "react";
 interface props {
   img: string;
   cardNumber: string;
+  amount: number;
 }
 
 function Card(props: props) {
-  const [amount, setAmount] = React.useState(0);
+  const [amount, setAmount] = React.useState(props.amount);
   const mtgCardSize = { width: 6.35, height: 8.9 };
   const scaleCoeff = 0.7; //change this to affect the size of cards on screen
   const cardBKG = {
@@ -26,6 +27,7 @@ function Card(props: props) {
   function takeCard() {
     setAmount((original) => (original === 0 ? original : original - 1));
   }
+
   return (
     <div
       className="mtgCard position-relative flex-column d-flex "
