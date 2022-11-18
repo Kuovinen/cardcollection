@@ -47,7 +47,14 @@ const settings: settingsType = {
     code: "MAO",
     path: "MAO_MAGIC_ORIGINS",
     cardsTotal: 272,
-    breaks: [42, 84, 126, 167, 209, 247],
+    breaks: [42, 84, 126, 167, 209],
+    bSided: [],
+  },
+  AMO: {
+    code: "AMO",
+    path: "AMO_AMONKHET",
+    cardsTotal: 272,
+    breaks: [39, 77, 116, 155, 193, 224, 269],
     bSided: [],
   },
   KLD: {

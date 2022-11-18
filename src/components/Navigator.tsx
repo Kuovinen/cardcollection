@@ -2,6 +2,7 @@ import icoIN1 from "../icoIN1.png";
 import icoIN4 from "../icoIN4.png";
 import icoIN5 from "../icoIN5.png";
 import icoKLD from "../icoKLD.png";
+import icoAMO from "../icoAMO.png";
 import icoGOR from "../icoGOR.png";
 import icoMAO from "../icoMAO.png";
 import "./Navigator.css";
@@ -37,6 +38,13 @@ function Navigator(props: navigatorProps) {
             src={icoIN5}
             onClick={() => changeSet("IN5")}
             alt="Shadow Over Innistrad Icon"
+          />
+        </button>
+        <button>
+          <img
+            src={icoAMO}
+            onClick={() => changeSet("AMO")}
+            alt="Amonkhet Icon"
           />
         </button>
         <button>
