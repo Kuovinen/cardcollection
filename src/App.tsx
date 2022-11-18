@@ -9,7 +9,16 @@ import extractFileNameFromPath from "./functions/extractFileNameFromPath";
 function App() {
   const [cardSetCode, setCardSetCode] = React.useState("IN1");
   const cardPaths = prepareCardData(settings, cardSetCode);
+  const [cardAmounts, setCardAmounts] = React.useState({});
+  async function getCardAmounts() {
+    const data = await fetch("http://localhost:3500/");
+    const dataParsed = await data.json();
+    setCardAmounts(() => dataParsed);
+  }
 
+  React.useEffect(() => {
+    getCardAmounts();
+  }, [cardSetCode]);
   return (
     <div className="App">
       <Navigator
@@ -24,13 +33,21 @@ function App() {
           {array.map((cardPath) => {
             const data: { key: string; cardNumber: string } =
               extractFileNameFromPath(cardPath);
-            return (
-              <Card
-                key={data.key}
-                img={cardPath}
-                cardNumber={data.cardNumber}
-              />
-            );
+            const amount1 =
+              Object.keys(cardAmounts).length === 0
+                ? 0
+                : cardAmounts[data.cardNumber as keyof typeof cardAmounts];
+            if (Object.keys(cardAmounts).length !== 0) {
+              //"IF"because no rerender otherwise
+              return (
+                <Card
+                  key={data.key}
+                  img={cardPath}
+                  amount={amount1}
+                  cardNumber={data.cardNumber}
+                />
+              );
+            }
           })}
         </div>
       ))}
