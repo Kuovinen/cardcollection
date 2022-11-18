@@ -1,5 +1,6 @@
 import icoIN1 from "../icoIN1.png";
 import icoIN4 from "../icoIN4.png";
+import icoIN5 from "../icoIN5.png";
 import icoKLD from "../icoKLD.png";
 import "./Navigator.css";
 interface navigatorProps {
@@ -27,6 +28,13 @@ function Navigator(props: navigatorProps) {
             src={icoIN4}
             onClick={() => changeSet("IN4")}
             alt="Eldritch Moon Icon"
+          />
+        </button>
+        <button>
+          <img
+            src={icoIN5}
+            onClick={() => changeSet("IN5")}
+            alt="Shadow Over Innistrad Icon"
           />
         </button>
         <button>

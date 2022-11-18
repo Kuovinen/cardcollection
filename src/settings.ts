@@ -29,6 +29,13 @@ const settings: settingsType = {
     breaks: [12, 48, 80, 114, 149, 180],
     bSided: [],
   },
+  IN5: {
+    code: "IN5",
+    path: "IN5_SHADOW_OVER_INNISTRAD",
+    cardsTotal: 297,
+    breaks: [48, 96, 144, 192, 240, 269],
+    bSided: [],
+  },
   KLD: {
     code: "KLD",
     path: "KLD_KALDHEIM",
