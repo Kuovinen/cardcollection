@@ -36,6 +36,20 @@ const settings: settingsType = {
     breaks: [48, 96, 144, 192, 240, 269],
     bSided: [],
   },
+  GOR: {
+    code: "GOR",
+    path: "GOR_GUILDS_OF_RAVNICA",
+    cardsTotal: 259,
+    breaks: [30, 60, 90, 120, 150, 230],
+    bSided: [],
+  },
+  MAO: {
+    code: "MAO",
+    path: "MAO_MAGIC_ORIGINS",
+    cardsTotal: 272,
+    breaks: [42, 84, 126, 167, 209, 247],
+    bSided: [],
+  },
   KLD: {
     code: "KLD",
     path: "KLD_KALDHEIM",
