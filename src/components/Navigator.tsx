@@ -2,6 +2,8 @@ import icoIN1 from "../icoIN1.png";
 import icoIN4 from "../icoIN4.png";
 import icoIN5 from "../icoIN5.png";
 import icoKLD from "../icoKLD.png";
+import icoGOR from "../icoGOR.png";
+import icoMAO from "../icoMAO.png";
 import "./Navigator.css";
 interface navigatorProps {
   setCardSetCode: React.Dispatch<React.SetStateAction<string>>;
@@ -39,6 +41,20 @@ function Navigator(props: navigatorProps) {
         </button>
         <button>
           <img
+            src={icoGOR}
+            onClick={() => changeSet("GOR")}
+            alt="Guilds of Ravnica Icon"
+          />
+        </button>
+        <button>
+          <img
+            src={icoMAO}
+            onClick={() => changeSet("MAO")}
+            alt="Magic Origins Icon"
+          />
+        </button>
+        <button>
+          <img
             src={icoKLD}
             onClick={() => changeSet("KLD")}
             alt="Kaldheim Icon"
@@ -46,7 +62,7 @@ function Navigator(props: navigatorProps) {
         </button>
       </div>
       <span className="text-light ml-3 font-weight-bold">
-        {props.setName.slice(4).replace("_", " ")}
+        {props.setName.slice(4).replace(/\_/g, " ")}
       </span>
     </nav>
   );
