@@ -18,6 +18,7 @@ function Card(props: props) {
   };
   const amountIndicatorStyle = {
     display: `${amount === 0 ? "none" : "block"}`,
+    border: `${amount < 4 ? "white 0.1rem" : "orange 0.2rem"}  solid`,
   };
   function addCard() {
     setAmount((original) => original + 1);
@@ -34,16 +35,20 @@ function Card(props: props) {
         opacity: "1",
       }}
     >
+      {/*CONTAINER for the IMAGE of the card itself*/}
       <div className="cardBKG position-absolute" style={cardBKG}></div>
+      {/*Card NUMBER*/}
       <small className="position-absolute text-light bg-dark rounded d-inline-block m-1 px-1">
         {props.cardNumber}
       </small>
+      {/*Amount changing BUTTONS*/}
       <button className="crdBtn text-light h2" onClick={addCard}>
         +
       </button>
       <button className="crdBtn text-light h2" onClick={takeCard}>
         -
       </button>
+      {/*AMOUNT*/}
       <small className="crdAmount" style={amountIndicatorStyle}>
         {amount}
       </small>
