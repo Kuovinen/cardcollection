@@ -18,7 +18,6 @@ it's inner index each time a card number matches one of the breaks*/
     //current column
     let column = 0;
     for (let i = 1; i <= totalCardNumber; i++) {
-      console.log(column);
       cardPaths[column].push(
         `/assets/${setSettings.path}/${setSettings.code}_${i}.jpg`
       );
