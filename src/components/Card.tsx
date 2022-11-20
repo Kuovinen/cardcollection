@@ -21,13 +21,27 @@ function Card(props: props) {
     display: `${amount === 0 ? "none" : "block"}`,
     border: `${amount < 4 ? "white 0.1rem" : "orange 0.2rem"}  solid`,
   };
-  function addCard() {
-    setAmount((original) => original + 1);
-  }
-  function takeCard() {
-    setAmount((original) => (original === 0 ? original : original - 1));
+
+  function extractSetNameFromPath(path: string) {
+    const arrayOfPathBits = path.split("/");
+    let fileName = arrayOfPathBits[arrayOfPathBits.length - 1];
+    const setName = fileName.slice(0, 3);
+    return setName;
   }
 
+  function adjust(takeOrAdd: number) {
+    setAmount((original) => original + takeOrAdd);
+    const setName = extractSetNameFromPath(props.img);
+    fetch("http://localhost:3500/adjust", {
+      method: "post",
+      body: JSON.stringify({
+        adj: takeOrAdd,
+        set: setName,
+        cardNumber: props.cardNumber,
+      }),
+      headers: { "Content-type": "application/json" },
+    });
+  }
   return (
     <div
       className="mtgCard position-relative flex-column d-flex "
@@ -44,10 +58,10 @@ function Card(props: props) {
         {props.cardNumber}
       </small>
       {/*Amount changing BUTTONS*/}
-      <button className="crdBtn text-light h2" onClick={addCard}>
+      <button className="crdBtn text-light h2" onClick={() => adjust(1)}>
         +
       </button>
-      <button className="crdBtn text-light h2" onClick={takeCard}>
+      <button className="crdBtn text-light h2" onClick={() => adjust(-1)}>
         -
       </button>
       {/*AMOUNT*/}
