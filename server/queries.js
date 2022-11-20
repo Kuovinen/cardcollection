@@ -6,14 +6,55 @@ const pool = new Pool({
   password: "psw", //shh, don't tell anyone
   port: 5432,
 });
-const getData = (request, response) => {
+//send specific sets data
+const getSetData = (request, response) => {
+  // request = {set="IN1"}
   pool.query("SELECT * FROM card", (error, results) => {
     if (error) {
       throw error;
     }
     response.status(200).json(results.rows);
   });
+  console.log(`sent full ${"setName"} set data`);
 };
+
+//adjust
+const adjust = (request, response) => {
+  const { adj, set, cardNumber } = request.body;
+  console.log(request.body);
+  // request.body = {adj:-1,set:'IN1',cardNumber:1}
+
+  pool.query(
+    `SELECT * FROM card WHERE number=${cardNumber} AND set='${set.toUpperCase()}'`,
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      const currentAmount = results.rows[0].amount;
+      if (adj > 0 || currentAmount > 0) {
+        pool.query(
+          `UPDATE card SET amount=${
+            currentAmount + adj
+          } WHERE number=${cardNumber} AND set='${set.toUpperCase()}'`,
+          (error, results) => {
+            if (error) {
+              throw error;
+            }
+            response.status(200).json({ adjust: "card" });
+          }
+        );
+      }
+    }
+  );
+
+  console.log(
+    `Adjusted card ${set.toUpperCase()}-${cardNumber} to ${
+      adj > 0 ? "+1" : "-1"
+    }.`
+  );
+};
+
+//Fill db with empty set data: Development command.
 const createCards = (request, response) => {
   const totalNumberOfCardsToBeAdded = 244;
   const x = totalNumberOfCardsToBeAdded;
@@ -31,9 +72,11 @@ const createCards = (request, response) => {
     setTimeout(() => insertCard(i), i * 200);
   } //200 seems to somewhat ensure the elements are place in the database in the correct order
   response.status(201).send(`Added ${x} cards.`);
+  console.log(`Added ${x} cards.`);
 };
 
 module.exports = {
-  getData,
+  getSetData,
   createCards,
+  adjust,
 };
