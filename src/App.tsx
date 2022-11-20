@@ -6,6 +6,15 @@ import settings from "./settings";
 import prepareCardData from "./functions/prepareCardData";
 import extractFileNameFromPath from "./functions/extractFileNameFromPath";
 
+interface sqlCardData {
+  id: number;
+  set: string;
+  amount: number;
+  name: string | null;
+  color: string | null;
+  number: number;
+}
+
 function App() {
   const [cardSetCode, setCardSetCode] = React.useState("IN1");
   const cardPaths = prepareCardData(settings, cardSetCode);
@@ -13,7 +22,13 @@ function App() {
   async function getCardAmounts() {
     const data = await fetch("http://localhost:3500/");
     const dataParsed = await data.json();
-    setCardAmounts(() => dataParsed);
+    const usableSetData = dataParsed.reduce(
+      (previous: {}, current: sqlCardData) => {
+        return { ...previous, [current.number]: current.amount };
+      },
+      {}
+    ); // takes ALL sql data from server and turns it to an obj of {num:amount} format
+    setCardAmounts(() => usableSetData);
   }
 
   React.useEffect(() => {
