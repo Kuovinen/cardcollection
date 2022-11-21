@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 //use to get all card data
-app.get("/", db.getSetData);
+app.post("/", db.getSetData);
 
 //use to adjust specific cards amount
 app.post("/adjust", db.adjust);

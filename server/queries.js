@@ -8,14 +8,15 @@ const pool = new Pool({
 });
 //send specific sets data
 const getSetData = (request, response) => {
-  // request = {set="IN1"}
-  pool.query("SELECT * FROM card", (error, results) => {
+  const set = request.body.set;
+  console.log(set);
+  pool.query(`SELECT * FROM card WHERE set='${set}'`, (error, results) => {
     if (error) {
       throw error;
     }
     response.status(200).json(results.rows);
   });
-  console.log(`sent full ${"setName"} set data`);
+  console.log(`sent full ${set} set data`);
 };
 
 //adjust
@@ -56,11 +57,12 @@ const adjust = (request, response) => {
 
 //Fill db with empty set data: Development command.
 const createCards = (request, response) => {
-  const totalNumberOfCardsToBeAdded = 244;
+  console.log("CREATE");
+  const totalNumberOfCardsToBeAdded = 405;
   const x = totalNumberOfCardsToBeAdded;
   function insertCard(i) {
     pool.query(
-      `INSERT INTO card (set,number,amount,name,color) VALUES ('IN1', ${i} , 0 ,null, null)`,
+      `INSERT INTO card (set,number,amount,name,color) VALUES ('KLD', ${i} , 0 ,null, null)`,
       (error, results) => {
         if (error) {
           throw error;

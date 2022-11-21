@@ -20,7 +20,14 @@ function App() {
   const cardPaths = prepareCardData(settings, cardSetCode);
   const [cardAmounts, setCardAmounts] = React.useState({});
   async function getCardAmounts() {
-    const data = await fetch("http://localhost:3500/");
+    const data = await fetch("http://localhost:3500/", {
+      method: "post",
+      body: JSON.stringify({
+        set: cardSetCode,
+      }),
+      headers: { "Content-type": "application/json" },
+    });
+
     const dataParsed = await data.json();
     const usableSetData = dataParsed.reduce(
       (previous: {}, current: sqlCardData) => {
