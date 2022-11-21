@@ -53,7 +53,7 @@ const settings: settingsType = {
   AMO: {
     code: "AMO",
     path: "AMO_AMONKHET",
-    cardsTotal: 272,
+    cardsTotal: 279,
     breaks: [39, 77, 116, 155, 193, 224, 269],
     bSided: [],
   },
