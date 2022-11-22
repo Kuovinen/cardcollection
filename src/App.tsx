@@ -14,7 +14,7 @@ interface sqlCardData {
   color: string | null;
   number: number;
 }
-interface cardAmounts {
+export interface cardAmounts {
   setCode: string;
   amounts: {};
 }
@@ -58,6 +58,7 @@ function App() {
       <Navigator
         getCardAmounts={getCardAmounts}
         setName={settings[cardAmounts.setCode].path}
+        cardAmounts={cardAmounts}
       />
       {cardPaths.map((array, index) => (
         <div

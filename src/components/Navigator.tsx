@@ -7,78 +7,55 @@ import icoGOR from "../icoGOR.png";
 import icoMAO from "../icoMAO.png";
 import icoMIB from "../icoMIB.png";
 import "./Navigator.css";
+import { cardAmounts } from "../App";
 interface navigatorProps {
   getCardAmounts: (setCode: string) => Promise<void>;
   setName: string;
+  cardAmounts: cardAmounts;
 }
 
 function Navigator(props: navigatorProps) {
   function changeSet(code: string) {
     props.getCardAmounts(code);
   }
-
+  const setButtons = [
+    { icon: icoMIB, setCode: "MIB", alt: "Mirrodin besieged Icon" },
+    { icon: icoIN1, setCode: "IN1", alt: "Avacyne Restored Icon" },
+    { icon: icoIN4, setCode: "IN4", alt: "Eldritch Moon Icon" },
+    { icon: icoIN5, setCode: "IN5", alt: "Shadow Over Innistrad Icon" },
+    { icon: icoAMO, setCode: "AMO", alt: "Amonkhet Icon" },
+    { icon: icoGOR, setCode: "GOR", alt: "Guilds of Ravnica Icon" },
+    { icon: icoMAO, setCode: "MAO", alt: "Magic Origins Icon" },
+    { icon: icoKLD, setCode: "KLD", alt: "Kaldheim Icon" },
+  ];
+  const amountsOject = props.cardAmounts.amounts;
+  const totalCardNumber = Object.keys(amountsOject).length;
+  const cardsGathered = Object.keys(amountsOject).filter(
+    (element) => amountsOject[element as keyof typeof amountsOject] !== 0
+  );
+  const cardsGatheredAmount = cardsGathered.length;
+  const percentCompleted = (cardsGatheredAmount * 100) / totalCardNumber + "";
+  const percentCompletedRounded = percentCompleted.slice(0, 4);
   return (
     <nav>
       <div>
-        <button>
-          <img
-            src={icoMIB}
-            onClick={() => changeSet("MIB")}
-            alt="Mirrodin besieged Icon"
-          />
-        </button>
-        <button>
-          <img
-            src={icoIN1}
-            onClick={() => changeSet("IN1")}
-            alt="Avacyne Restored Icon"
-          />
-        </button>
-        <button>
-          <img
-            src={icoIN4}
-            onClick={() => changeSet("IN4")}
-            alt="Eldritch Moon Icon"
-          />
-        </button>
-        <button>
-          <img
-            src={icoIN5}
-            onClick={() => changeSet("IN5")}
-            alt="Shadow Over Innistrad Icon"
-          />
-        </button>
-        <button>
-          <img
-            src={icoAMO}
-            onClick={() => changeSet("AMO")}
-            alt="Amonkhet Icon"
-          />
-        </button>
-        <button>
-          <img
-            src={icoGOR}
-            onClick={() => changeSet("GOR")}
-            alt="Guilds of Ravnica Icon"
-          />
-        </button>
-        <button>
-          <img
-            src={icoMAO}
-            onClick={() => changeSet("MAO")}
-            alt="Magic Origins Icon"
-          />
-        </button>
-        <button>
-          <img
-            src={icoKLD}
-            onClick={() => changeSet("KLD")}
-            alt="Kaldheim Icon"
-          />
-        </button>
+        {setButtons.map((element, index) => (
+          <button key={index /*never intended to be changed*/}>
+            <img
+              src={element.icon}
+              onClick={() => changeSet(element.setCode)}
+              alt={element.alt}
+            />
+          </button>
+        ))}
       </div>
       <span className="text-light ml-3 font-weight-bold">
         {props.setName.slice(4).replace(/\_/g, " ")}
+      </span>
+      &emsp;{" "}
+      <span className="text-light ml-3 font-weight-bold">
+        {cardsGatheredAmount} / {totalCardNumber} &emsp;{" "}
+        {percentCompletedRounded}%
       </span>
     </nav>
   );
