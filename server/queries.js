@@ -58,11 +58,14 @@ const adjust = (request, response) => {
 //Fill db with empty set data: Development command.
 const createCards = (request, response) => {
   console.log("CREATE");
-  const totalNumberOfCardsToBeAdded = 405;
-  const x = totalNumberOfCardsToBeAdded;
+  //EDIT THESE AMOUNT TO CONTROL SQL TABLE ADDITION/////////////////
+  const setData = { totalNumberOfCardsToBeAdded: 155, code: "MIB" };
+  //////////////////////////////////////////////////////////////////
+  const x = setData.totalNumberOfCardsToBeAdded;
+  const y = setData.code;
   function insertCard(i) {
     pool.query(
-      `INSERT INTO card (set,number,amount,name,color) VALUES ('KLD', ${i} , 0 ,null, null)`,
+      `INSERT INTO card (set,number,amount,name,color) VALUES ('${y}', ${i} , 0 ,null, null)`,
       (error, results) => {
         if (error) {
           throw error;
@@ -74,7 +77,7 @@ const createCards = (request, response) => {
     setTimeout(() => insertCard(i), i * 200);
   } //200 seems to somewhat ensure the elements are place in the database in the correct order
   response.status(201).send(`Added ${x} cards.`);
-  console.log(`Added ${x} cards.`);
+  console.log(`Added ${x} cards from set ${y}.`);
 };
 
 module.exports = {
