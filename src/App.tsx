@@ -14,38 +14,50 @@ interface sqlCardData {
   color: string | null;
   number: number;
 }
-
+interface cardAmounts {
+  setCode: string;
+  amounts: {};
+}
 function App() {
-  const [cardSetCode, setCardSetCode] = React.useState("IN1");
-  const cardPaths = prepareCardData(settings, cardSetCode);
-  const [cardAmounts, setCardAmounts] = React.useState({});
-  async function getCardAmounts() {
+  const initialLoad = React.useRef(true);
+  const [cardAmounts, setCardAmounts] = React.useState<cardAmounts>({
+    setCode: "MIB",
+    amounts: {},
+  });
+  const cardPaths = prepareCardData(settings, cardAmounts.setCode);
+  //contact server to get SQL data for a card set
+  async function getCardAmounts(setCode: string) {
     const data = await fetch("http://localhost:3500/", {
       method: "post",
       body: JSON.stringify({
-        set: cardSetCode,
+        set: setCode,
       }),
       headers: { "Content-type": "application/json" },
     });
-
     const dataParsed = await data.json();
+    // take ALL sql data from server and turns it to an obj of {num:amount} format
     const usableSetData = dataParsed.reduce(
       (previous: {}, current: sqlCardData) => {
         return { ...previous, [current.number]: current.amount };
       },
       {}
-    ); // takes ALL sql data from server and turns it to an obj of {num:amount} format
-    setCardAmounts(() => usableSetData);
+    );
+    //set cardAmounts state to new data from SQL
+    setCardAmounts((original) => {
+      return { ...original, setCode: setCode, amounts: usableSetData };
+    });
+  }
+  //inital page load SQL request for data
+  if (initialLoad.current) {
+    initialLoad.current = false;
+    getCardAmounts("MIB");
   }
 
-  React.useEffect(() => {
-    getCardAmounts();
-  }, [cardSetCode]);
   return (
     <div className="App">
       <Navigator
-        setCardSetCode={setCardSetCode}
-        setName={settings[cardSetCode].path}
+        getCardAmounts={getCardAmounts}
+        setName={settings[cardAmounts.setCode].path}
       />
       {cardPaths.map((array, index) => (
         <div
@@ -55,17 +67,20 @@ function App() {
           {array.map((cardPath) => {
             const data: { key: string; cardNumber: string } =
               extractFileNameFromPath(cardPath);
-            const amount1 =
-              Object.keys(cardAmounts).length === 0
+            const cardSetAmountData = cardAmounts.amounts;
+            const amount =
+              Object.keys(cardSetAmountData).length === 0
                 ? 0
-                : cardAmounts[data.cardNumber as keyof typeof cardAmounts];
-            if (Object.keys(cardAmounts).length !== 0) {
+                : cardSetAmountData[
+                    data.cardNumber as keyof typeof cardSetAmountData
+                  ];
+            if (Object.keys(cardSetAmountData).length !== 0) {
               //"IF"because no rerender otherwise
               return (
                 <Card
                   key={data.key}
                   img={cardPath}
-                  amount={amount1}
+                  amount={amount}
                   cardNumber={data.cardNumber}
                 />
               );

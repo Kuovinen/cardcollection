@@ -5,20 +5,28 @@ import icoKLD from "../icoKLD.png";
 import icoAMO from "../icoAMO.png";
 import icoGOR from "../icoGOR.png";
 import icoMAO from "../icoMAO.png";
+import icoMIB from "../icoMIB.png";
 import "./Navigator.css";
 interface navigatorProps {
-  setCardSetCode: React.Dispatch<React.SetStateAction<string>>;
+  getCardAmounts: (setCode: string) => Promise<void>;
   setName: string;
 }
 
 function Navigator(props: navigatorProps) {
   function changeSet(code: string) {
-    props.setCardSetCode(() => code);
+    props.getCardAmounts(code);
   }
 
   return (
     <nav>
       <div>
+        <button>
+          <img
+            src={icoMIB}
+            onClick={() => changeSet("MIB")}
+            alt="Mirrodin besieged Icon"
+          />
+        </button>
         <button>
           <img
             src={icoIN1}

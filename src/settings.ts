@@ -15,6 +15,13 @@ export interface settingsType {
 }
 
 const settings: settingsType = {
+  MIB: {
+    code: "MIB",
+    path: "MIB_MIRRODIN_BESIEGED",
+    cardsTotal: 155,
+    breaks: [19, 38, 57, 76, 95, 144],
+    bSided: [],
+  },
   IN1: {
     code: "IN1",
     path: "IN1_AVACYN_RESTORED",
