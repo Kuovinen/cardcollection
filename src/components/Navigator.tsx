@@ -6,6 +6,7 @@ import icoAMO from "../icoAMO.png";
 import icoGOR from "../icoGOR.png";
 import icoMAO from "../icoMAO.png";
 import icoMIB from "../icoMIB.png";
+import icoNPH from "../icoNPH.png";
 import "./Navigator.css";
 import { cardAmounts } from "../App";
 interface navigatorProps {
@@ -18,8 +19,10 @@ function Navigator(props: navigatorProps) {
   function changeSet(code: string) {
     props.getCardAmounts(code);
   }
+  //TO ADD A NEW SET ADD DATA TO THE SETBUTTONS VARIABLE. ALL ELSE IS FINE.
   const setButtons = [
     { icon: icoMIB, setCode: "MIB", alt: "Mirrodin besieged Icon" },
+    { icon: icoNPH, setCode: "NPH", alt: "New Phyrexia Icon" },
     { icon: icoIN1, setCode: "IN1", alt: "Avacyne Restored Icon" },
     { icon: icoIN4, setCode: "IN4", alt: "Eldritch Moon Icon" },
     { icon: icoIN5, setCode: "IN5", alt: "Shadow Over Innistrad Icon" },

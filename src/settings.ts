@@ -22,6 +22,13 @@ const settings: settingsType = {
     breaks: [19, 38, 57, 76, 95, 144],
     bSided: [],
   },
+  NPH: {
+    code: "NPH",
+    path: "NPH_NEW_PHYREXIA",
+    cardsTotal: 175,
+    breaks: [26, 51, 77, 102, 127, 167],
+    bSided: [],
+  },
   IN1: {
     code: "IN1",
     path: "IN1_AVACYN_RESTORED",
