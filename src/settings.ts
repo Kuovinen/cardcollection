@@ -81,5 +81,19 @@ const settings: settingsType = {
       314, 317, 318,
     ],
   },
+  ZER: {
+    code: "ZER",
+    path: "ZER_ZENDIKAR_RISING",
+    cardsTotal: 280,
+    breaks: [44, 88, 132, 176, 219, 242, 265],
+    bSided: [],
+  },
+  OAT: {
+    code: "OAT",
+    path: "OAT_OATH_OF_THE_GATEWATCH",
+    cardsTotal: 184,
+    breaks: [12, 39, 66, 93, 120, 147],
+    bSided: [],
+  },
 };
 export default settings;

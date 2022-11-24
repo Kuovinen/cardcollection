@@ -7,6 +7,8 @@ import icoGOR from "../icoGOR.png";
 import icoMAO from "../icoMAO.png";
 import icoMIB from "../icoMIB.png";
 import icoNPH from "../icoNPH.png";
+import icoOAT from "../icoOAT.png";
+import icoZER from "../icoZER.png";
 import "./Navigator.css";
 import { cardAmounts } from "../App";
 interface navigatorProps {
@@ -29,6 +31,8 @@ function Navigator(props: navigatorProps) {
     { icon: icoAMO, setCode: "AMO", alt: "Amonkhet Icon" },
     { icon: icoGOR, setCode: "GOR", alt: "Guilds of Ravnica Icon" },
     { icon: icoMAO, setCode: "MAO", alt: "Magic Origins Icon" },
+    { icon: icoOAT, setCode: "OAT", alt: "Oath of the Gatewatch Icon" },
+    { icon: icoZER, setCode: "ZER", alt: "Zendikar rising Icon" },
     { icon: icoKLD, setCode: "KLD", alt: "Kaldheim Icon" },
   ];
   const amountsOject = props.cardAmounts.amounts;
