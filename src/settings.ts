@@ -95,5 +95,19 @@ const settings: settingsType = {
     breaks: [12, 39, 66, 93, 120, 147],
     bSided: [],
   },
+  KAL: {
+    code: "KAL",
+    path: "KAL_KALADESH",
+    cardsTotal: 274,
+    breaks: [35, 70, 105, 140, 175, 190, 241],
+    bSided: [],
+  },
+  DOM: {
+    code: "DOM",
+    path: "DOM_DOMINARIA",
+    cardsTotal: 280,
+    breaks: [39, 76, 114, 152, 189, 208, 237, 269],
+    bSided: [],
+  },
 };
 export default settings;
