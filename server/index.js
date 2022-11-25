@@ -15,6 +15,8 @@ app.post("/adjust", db.adjust);
 /*used to populate db with empty cards.. 
 NB! adjust the "totalNumberOfCardsToBeAdded" value in queries*/
 app.get("/addCards", db.createCards);
+//get all cards
+app.get("/allCards", db.getAllCardData);
 
 app.listen(port, function () {
   console.log(`Collector server listening port ${port}!`);

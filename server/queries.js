@@ -18,6 +18,18 @@ const getSetData = (request, response) => {
   });
   console.log(`sent full ${set} set data`);
 };
+//send all sets data
+const getAllCardData = (request, response) => {
+  const set = request.body.set;
+  console.log(set);
+  pool.query(`SELECT amount FROM card`, (error, results) => {
+    if (error) {
+      throw error;
+    }
+    response.status(200).json(results.rows);
+  });
+  console.log(`sent all card data`);
+};
 
 //adjust
 const adjust = (request, response) => {
@@ -59,7 +71,7 @@ const adjust = (request, response) => {
 const createCards = (request, response) => {
   console.log("CREATE");
   //EDIT THESE AMOUNT TO CONTROL SQL TABLE ADDITION/////////////////
-  const setData = { totalNumberOfCardsToBeAdded: 280, code: "ZER" };
+  const setData = { totalNumberOfCardsToBeAdded: 280, code: "DOM" };
   //////////////////////////////////////////////////////////////////
   const x = setData.totalNumberOfCardsToBeAdded;
   const y = setData.code;
@@ -84,4 +96,5 @@ module.exports = {
   getSetData,
   createCards,
   adjust,
+  getAllCardData,
 };

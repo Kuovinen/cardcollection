@@ -10,9 +10,30 @@ nav > div > button:focus {
   outline: none;
 }
 nav > div {
-  background: black;
   padding: 0.25rem;
 }
 nav {
   margin-bottom: 1rem;
+}
+.statsButton {
+  background: none;
+  border: none;
+}
+.statsButton:focus {
+  outline: none;
+}
+.statsButton:active {
+  transform: scale(0.9);
+}
+.number:hover .tt {
+  display: block;
+}
+.tt {
+  position: relative;
+  display: none;
+  position: absolute;
+  background-color: hsla(0, 0%, 100%, 0.282);
+  border-radius: 0.2rem;
+  font-size: 0.5rem;
+  padding: 0 0.2rem;
 }
