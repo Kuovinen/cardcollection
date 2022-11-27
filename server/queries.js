@@ -71,7 +71,7 @@ const adjust = (request, response) => {
 const createCards = (request, response) => {
   console.log("CREATE");
   //EDIT THESE AMOUNT TO CONTROL SQL TABLE ADDITION/////////////////
-  const setData = { totalNumberOfCardsToBeAdded: 280, code: "DOM" };
+  const setData = { totalNumberOfCardsToBeAdded: 274, code: "BFZ" };
   //////////////////////////////////////////////////////////////////
   const x = setData.totalNumberOfCardsToBeAdded;
   const y = setData.code;

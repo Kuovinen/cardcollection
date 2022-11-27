@@ -88,6 +88,13 @@ const settings: settingsType = {
     breaks: [44, 88, 132, 176, 219, 242, 265],
     bSided: [],
   },
+  BFZ: {
+    code: "BFZ",
+    path: "BFZ_BATTLE_FOR_ZENDIKAR",
+    cardsTotal: 274,
+    breaks: [17, 53, 89, 126, 162, 198, 288, 249],
+    bSided: [],
+  },
   OAT: {
     code: "OAT",
     path: "OAT_OATH_OF_THE_GATEWATCH",

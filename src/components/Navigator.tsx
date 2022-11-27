@@ -9,6 +9,7 @@ import icoMIB from "../icoMIB.png";
 import icoNPH from "../icoNPH.png";
 import icoOAT from "../icoOAT.png";
 import icoZER from "../icoZER.png";
+import icoBFZ from "../icoBFZ.png";
 import icoKAL from "../icoKAL.png";
 import icoDOM from "../icoDOM.png";
 import React from "react";
@@ -36,6 +37,7 @@ function Navigator(props: navigatorProps) {
     { icon: icoMAO, setCode: "MAO", alt: "Magic Origins Icon" },
     { icon: icoOAT, setCode: "OAT", alt: "Oath of the Gatewatch Icon" },
     { icon: icoZER, setCode: "ZER", alt: "Zendikar rising Icon" },
+    { icon: icoBFZ, setCode: "BFZ", alt: "Battle for Zendikar Icon" },
     { icon: icoKLD, setCode: "KLD", alt: "Kaldheim Icon" },
     { icon: icoKAL, setCode: "KAL", alt: "Kaladesh Icon" },
     { icon: icoDOM, setCode: "DOM", alt: "Dominaria Icon" },
