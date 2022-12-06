@@ -116,5 +116,12 @@ const settings: settingsType = {
     breaks: [39, 76, 114, 152, 189, 208, 237, 269],
     bSided: [],
   },
+  WOS: {
+    code: "WOS",
+    path: "WOS_WAR_OR_THE_SPARK",
+    cardsTotal: 275,
+    breaks: [39, 75, 112, 148, 183, 243],
+    bSided: [],
+  },
 };
 export default settings;

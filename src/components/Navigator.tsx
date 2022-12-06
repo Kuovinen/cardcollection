@@ -12,6 +12,7 @@ import icoZER from "../icoZER.png";
 import icoBFZ from "../icoBFZ.png";
 import icoKAL from "../icoKAL.png";
 import icoDOM from "../icoDOM.png";
+import icoWOS from "../icoWOS.png";
 import React from "react";
 import "./Navigator.css";
 import { cardAmounts } from "../App";
@@ -41,6 +42,7 @@ function Navigator(props: navigatorProps) {
     { icon: icoKLD, setCode: "KLD", alt: "Kaldheim Icon" },
     { icon: icoKAL, setCode: "KAL", alt: "Kaladesh Icon" },
     { icon: icoDOM, setCode: "DOM", alt: "Dominaria Icon" },
+    { icon: icoWOS, setCode: "WOS", alt: "War of the spark" },
   ];
   const amountsOject = props.cardAmounts.amounts;
   const totalCardNumber = Object.keys(amountsOject).length;
