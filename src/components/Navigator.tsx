@@ -92,37 +92,32 @@ function Navigator(props: navigatorProps) {
           </button>
         ))}
       </div>
-      <div className={"d-flex justify-content-between"}>
-        <div>
-          <span className="text-light ml-3 font-weight-bold">
+      <div className={"row p-0 m-0 flex-wrap"}>
+        <div className="col-12 col-lg-10  p-0 m-0 d-flex flex-wrap justify-content-start">
+          <div className=" text-light ml-3 font-weight-bold">
             {props.setName.slice(4).replace(/\_/g, " ")}
-          </span>
+          </div>
           &emsp;{" "}
-          <span className="text-light ml-3 font-weight-bold">
+          <div className="text-light ml-3 font-weight-bold d-flex flex-nowrap">
             {cardsGatheredAmount} / {totalCardNumber} &emsp;{" "}
             {percentCompletedRounded}%
-          </span>
+          </div>
         </div>
 
-        <span className="inline-block ">
-          <span
-            className="text-light"
-            style={{ display: totalCard.unique === 0 ? "none" : "inline" }}
+        <div className="col-12 col-lg-2 d-flex justify-content-end flex flex-nowrap">
+          <div
+            className="text-light  flex-nowrap"
+            style={{
+              display: totalCard.unique === 0 ? "none" : "flex",
+            }}
           >
-            <span className={"number"}>
-              {totalCard.unique}
-              <span className={"tt"}>unique cards</span>
-            </span>
-            /
-            <span className={"number"}>
-              {totalCard.total}
-              <span className={"tt"}>total cards</span>
-            </span>
-          </span>
+            <div className="number uu">{totalCard.unique}</div> /{" "}
+            <div className="number tt"> {totalCard.total}</div>
+          </div>
           <button className="statsButton text-light mx-3" onClick={getTotal}>
-            CHECK TOTAL
+            Collection
           </button>
-        </span>
+        </div>
       </div>
     </nav>
   );

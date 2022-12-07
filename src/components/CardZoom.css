@@ -1,0 +1,14 @@
+#zoomContainer {
+  background: black;
+  position: relative;
+}
+.zoomCard {
+  height: 40%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0.5rem;
+  top: 1rem;
+  position: sticky;
+}

@@ -4,9 +4,11 @@ interface props {
   img: string;
   cardNumber: string;
   amount: number;
+  setZoomCard: React.Dispatch<React.SetStateAction<string>>;
 }
 
 function Card(props: props) {
+  console.log("rendered card!");
   const [amount, setAmount] = React.useState(props.amount);
   const mtgCardSize = { width: 6.35, height: 8.9 };
   const scaleCoeff = 0.7; //change this to affect the size of cards on screen
@@ -50,6 +52,7 @@ function Card(props: props) {
         backgroundImage: "none",
         opacity: "1",
       }}
+      onMouseEnter={() => props.setZoomCard(props.img)}
     >
       {/*CONTAINER for the IMAGE of the card itself*/}
       <div className="cardBKG position-absolute" style={cardBKG}></div>

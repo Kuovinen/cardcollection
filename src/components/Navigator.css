@@ -13,7 +13,7 @@ nav > div {
   padding: 0.25rem;
 }
 nav {
-  margin-bottom: 1rem;
+  border-bottom: 0.4rem solid black;
 }
 .statsButton {
   background: none;
@@ -25,15 +25,26 @@ nav {
 .statsButton:active {
   transform: scale(0.9);
 }
-.number:hover .tt {
+
+.tt,
+.uu {
+  position: relative;
+}
+.tt:hover::before,
+.uu:hover::before {
   display: block;
 }
-.tt {
-  position: relative;
+.tt:before,
+.uu:before {
+  content: "total";
   display: none;
-  position: absolute;
-  background-color: hsla(0, 0%, 100%, 0.282);
-  border-radius: 0.2rem;
-  font-size: 0.5rem;
+  background-color: grey;
   padding: 0 0.2rem;
+  border-radius: 0.2rem;
+  border: 0.1rem white solid;
+  position: absolute;
+  bottom: 1.5rem;
+}
+.uu:before {
+  content: "unique";
 }

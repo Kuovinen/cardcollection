@@ -7,3 +7,8 @@ body {
   box-sizing: border-box;
   background: var(--grey);
 }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
