@@ -15,7 +15,7 @@ import icoDOM from "../icoDOM.png";
 import icoWOS from "../icoWOS.png";
 import React from "react";
 import "./Navigator.css";
-import { cardAmounts } from "../App";
+import { cardAmounts } from "../Collector";
 interface navigatorProps {
   getCardAmounts: (setCode: string) => Promise<void>;
   setName: string;

@@ -1,0 +1,15 @@
+.actualDeck,
+.cardZoom,
+header {
+  background: black;
+}
+
+.deckCard {
+  height: 5rem;
+  width: 3.5rem;
+  border-radius: 0.5rem;
+  background-color: grey;
+  margin: 0 0.3rem;
+  background-image: url("../public/assets/DOM_DOMINARIA/DOM_7.jpg");
+  background-size: contain;
+}

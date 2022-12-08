@@ -8,6 +8,8 @@ app.use(express.json());
 
 //use to get all card data
 app.post("/", db.getSetData);
+//use to get all card data WITH COLOR
+app.post("/", db.getSetDataWC);
 
 //use to adjust specific cards amount
 app.post("/adjust", db.adjust);

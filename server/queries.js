@@ -10,12 +10,32 @@ const pool = new Pool({
 const getSetData = (request, response) => {
   const set = request.body.set;
   console.log(set);
-  pool.query(`SELECT * FROM card WHERE set='${set}'`, (error, results) => {
-    if (error) {
-      throw error;
+  pool.query(
+    `SELECT set,number,amount FROM card WHERE set='${set}'`,
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
     }
-    response.status(200).json(results.rows);
-  });
+  );
+
+  console.log(`sent full ${set} set data`);
+};
+//send specific sets data with color info
+const getSetDataWC = (request, response) => {
+  const set = request.body.set;
+  console.log(set);
+  pool.query(
+    `SELECT set,number,amount,white,blue,black,red,green FROM card WHERE set='${set}'`,
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    }
+  );
+
   console.log(`sent full ${set} set data`);
 };
 //send all sets data
@@ -31,7 +51,7 @@ const getAllCardData = (request, response) => {
   console.log(`sent all card data`);
 };
 
-//adjust
+//adjust card amount, where adj can be (+)1 or -1 thus changing the total.
 const adjust = (request, response) => {
   const { adj, set, cardNumber } = request.body;
   console.log(request.body);
@@ -94,6 +114,7 @@ const createCards = (request, response) => {
 
 module.exports = {
   getSetData,
+  getSetDataWC,
   createCards,
   adjust,
   getAllCardData,
