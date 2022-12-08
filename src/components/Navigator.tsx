@@ -83,7 +83,10 @@ function Navigator(props: navigatorProps) {
     <nav>
       <div style={{ background: "black" }}>
         {setButtons.map((element, index) => (
-          <button key={index /*never intended to be changed*/}>
+          <button
+            key={index /*never intended to be changed*/}
+            className="setIcon"
+          >
             <img
               src={element.icon}
               onClick={() => changeSet(element.setCode)}

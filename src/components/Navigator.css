@@ -48,3 +48,9 @@ nav {
 .uu:before {
   content: "unique";
 }
+.setIcon {
+  filter: grayscale(0%);
+}
+.setIcon:hover {
+  filter: grayscale(100%) brightness(150%);
+}

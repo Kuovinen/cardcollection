@@ -99,7 +99,7 @@ function App() {
         cardAmounts={cardAmounts}
       />
       <div className="container-fluid p-0">
-        <div className="main row mr-4 flex-nowrap p-0 m-0">
+        <div className="main row ml-2 mr-4 flex-nowrap p-0 m-0">
           <div className="cards m-0 p-0 mt-2  col-12 col-xl-10">
             {componentsArray}
           </div>
