@@ -111,11 +111,11 @@ function App(props: CollectorProps) {
           <CardZoom zoomCard={zoomCard} />
         </main>
       </div>
-      <div className="d-flex justify-content-center">
+      <footer className="d-flex justify-content-center">
         <button className="modSwitchBtn" onClick={props.changeModule}>
           DECK BUILDER
         </button>
-      </div>
+      </footer>
     </div>
   );
 }
