@@ -53,7 +53,7 @@ function DBStats(props: DBCardList) {
       <div className="deckStats container-fluid p-1">{statIcons}</div>
       <div className="d-flex justify-content-end mr-2">
         <span>{props.deck.length}</span> /
-        <span>{props.type === "60 Cards Deck" ? " 60" : " 100"}</span>
+        <span>{props.type === "Normal Deck" ? " 60" : " 100"}</span>
       </div>
     </div>
   );

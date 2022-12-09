@@ -18,7 +18,7 @@ function DeckBHeader(props: DeckBHeaderProps) {
   ///////////////////////////////////////CHANGE DECK TYPE -> COMMANDER OR NORMAL
   function changeType() {
     props.setType(() =>
-      props.type === "60 Cards Deck" ? "Commander Deck" : "60 Cards Deck"
+      props.type === "Normal Deck" ? "Commander Deck" : "Normal Deck"
     );
   }
 
@@ -60,16 +60,17 @@ function DeckBHeader(props: DeckBHeaderProps) {
   return (
     <header className="container-fluid">
       <div className="row">
-        <input type="text" placeholder="deck name" />{" "}
+        <input className="ml-3" type="text" placeholder="deck name" />{" "}
         <div className="filters">{iconElements}</div>
         <div className="stats text-light">
           <button className="deckSwich modSwitchBtn" onClick={changeType}>
             Change Type
           </button>
-          <span>{props.type}</span>
+
           <br />
         </div>
       </div>
+      <span className="font-weight-bold text-light">{props.type}</span>
     </header>
   );
 }

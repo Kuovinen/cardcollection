@@ -7,7 +7,7 @@ interface DeckBuilderProps {
   changeModule(): void;
 }
 function DeckBuilder(props: DeckBuilderProps) {
-  const [type, setType] = React.useState<string>("60 Cards Deck");
+  const [type, setType] = React.useState<string>("Normal Deck");
   const [zoomCard, setZoomCard] = React.useState<string>(
     "../public/assets/DOM_DOMINARIA/DOM_7.jpg"
   );
