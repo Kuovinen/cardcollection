@@ -9,3 +9,15 @@
 .crdNameBtns > button:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+.deckStats {
+  border: 0.1rem solid white;
+}
+.manaStatIcon {
+  height: 1.5rem;
+}
+.manaInstance {
+  height: 100%;
+  width: 100%;
+  border: 0.1rem white solid;
+  color: rgb(117, 35, 146);
+}

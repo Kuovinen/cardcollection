@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 interface DBCardList {
   filteredCards: string[];
 }
@@ -5,13 +6,13 @@ function DBActualDeck(props: DBCardList) {
   return (
     <div className="cards m-0 p-0 mt-2 col-10 col-xl-8 text-light">
       AVAILABLE CARDS:
-      <ul>
+      <ul className="p-0 m-0 mr-2">
         {props.filteredCards.map((name) => (
-          <li className="cardName text-light row">
-            <span className="col-8">{name}</span>{" "}
-            <div className="crdNameBtns col-4 d-inline-block">
-              <button className="crdNameBtns col-5">-</button>
-              <button className="crdNameBtns col-5">+</button>
+          <li key={uuidv4()} className="cardName text-light row p-0 m-1">
+            <p className="col-8 p-0 m-0 d-inline-block">{name}</p>
+            <div className="crdNameBtns col-4 d-inline-block p-0 m-0">
+              <button className="crdNameBtns p-0 m-0 col-6">-</button>
+              <button className="crdNameBtns p-0 m-0 col-6">+</button>
             </div>
           </li>
         ))}
