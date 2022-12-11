@@ -13,6 +13,10 @@ import icoBFZ from "../icoBFZ.png";
 import icoKAL from "../icoKAL.png";
 import icoDOM from "../icoDOM.png";
 import icoWOS from "../icoWOS.png";
+import icoSOM from "../icoSOM.png";
+import icoLRW from "../icoLRW.png";
+import icoMRD from "../icoMRD.png";
+import icoTHS from "../icoTHS.png";
 import React from "react";
 import "./Navigator.css";
 import { cardAmounts } from "../Collector";
@@ -29,6 +33,7 @@ function Navigator(props: navigatorProps) {
   //TO ADD A NEW SET ADD DATA TO THE SETBUTTONS VARIABLE. ALL ELSE IS FINE.
   const setButtons = [
     { icon: icoMIB, setCode: "MIB", alt: "Mirrodin besieged Icon" },
+    { icon: icoSOM, setCode: "SOM", alt: "Scars if Mirrodin" },
     { icon: icoNPH, setCode: "NPH", alt: "New Phyrexia Icon" },
     { icon: icoIN1, setCode: "IN1", alt: "Avacyne Restored Icon" },
     { icon: icoIN4, setCode: "IN4", alt: "Eldritch Moon Icon" },
@@ -43,6 +48,9 @@ function Navigator(props: navigatorProps) {
     { icon: icoKAL, setCode: "KAL", alt: "Kaladesh Icon" },
     { icon: icoDOM, setCode: "DOM", alt: "Dominaria Icon" },
     { icon: icoWOS, setCode: "WOS", alt: "War of the spark" },
+    { icon: icoMRD, setCode: "MRD", alt: "Mirrodin" },
+    { icon: icoLRW, setCode: "LRW", alt: "Lorwyn" },
+    { icon: icoTHS, setCode: "THS", alt: "Theros" },
   ];
   const amountsOject = props.cardAmounts.amounts;
   const totalCardNumber = Object.keys(amountsOject).length;

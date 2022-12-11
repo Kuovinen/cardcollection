@@ -22,6 +22,13 @@ const settings: settingsType = {
     breaks: [19, 38, 57, 76, 95, 144],
     bSided: [],
   },
+  SOM: {
+    code: "SOM",
+    path: "SOM_SCARS_OF_MIRRODIN",
+    cardsTotal: 249,
+    breaks: [],
+    bSided: [],
+  },
   NPH: {
     code: "NPH",
     path: "NPH_NEW_PHYREXIA",
@@ -118,9 +125,30 @@ const settings: settingsType = {
   },
   WOS: {
     code: "WOS",
-    path: "WOS_WAR_OR_THE_SPARK",
+    path: "WOS_WAR_OF_THE_SPARK",
     cardsTotal: 275,
     breaks: [39, 75, 112, 148, 183, 243],
+    bSided: [],
+  },
+  MRD: {
+    code: "MRD",
+    path: "MRD_MIRRODIN",
+    cardsTotal: 140,
+    breaks: [28, 56, 84, 112],
+    bSided: [],
+  },
+  LRW: {
+    code: "LRW",
+    path: "LRW_LORWYN",
+    cardsTotal: 245,
+    breaks: [49, 98, 147, 196, 245],
+    bSided: [],
+  },
+  THS: {
+    code: "THS",
+    path: "THS_THEROS",
+    cardsTotal: 249,
+    breaks: [37, 74, 109, 147, 184, 223],
     bSided: [],
   },
 };
