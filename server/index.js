@@ -9,14 +9,14 @@ app.use(express.json());
 //use to get all card data
 app.post("/", db.getSetData);
 //use to get all card data WITH COLOR
-app.post("/", db.getSetDataWC);
+app.post("/WC", db.getSetDataWC);
+
+//use to get filtered cards with data for deck building
+app.post("/filter", db.getFilteredCards);
 
 //use to adjust specific cards amount
 app.post("/adjust", db.adjust);
 
-/*used to populate db with empty cards.. 
-NB! adjust the "totalNumberOfCardsToBeAdded" value in queries*/
-app.get("/addCards", db.createCards);
 //get all cards
 app.get("/allCards", db.getAllCardData);
 
