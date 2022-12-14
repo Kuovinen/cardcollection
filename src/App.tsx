@@ -12,7 +12,7 @@ function App() {
   ////////////////////////////////////////////////////////////////////////RETURN
   return (
     <div>
-      {module === "collector" ? (
+      {module === "deckBuilder" ? (
         <Collector changeModule={changeModule} />
       ) : (
         <DeckBuilder changeModule={changeModule} />
