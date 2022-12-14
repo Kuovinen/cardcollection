@@ -15,8 +15,20 @@ import icoDOM from "../icoDOM.png";
 import icoWOS from "../icoWOS.png";
 import icoSOM from "../icoSOM.png";
 import icoLRW from "../icoLRW.png";
+import icoEVE from "../icoEVE.png";
+import icoMOR from "../icoMOR.png";
+import icoSHM from "../icoSHM.png";
 import icoMRD from "../icoMRD.png";
 import icoTHS from "../icoTHS.png";
+import icoCHK from "../icoCHK.png";
+import icoSOK from "../icoSOK.png";
+import icoBOK from "../icoBOK.png";
+import icoZEN from "../icoZEN.png";
+import icoROE from "../icoROE.png";
+import icoWWK from "../icoWWK.png";
+import icoALA from "../icoALA.png";
+import icoARB from "../icoARB.png";
+import icoCON from "../icoCON.png";
 import React from "react";
 import "./Navigator.css";
 import { cardAmounts } from "../Collector";
@@ -32,6 +44,10 @@ function Navigator(props: navigatorProps) {
   }
   //TO ADD A NEW SET ADD DATA TO THE SETBUTTONS VARIABLE. ALL ELSE IS FINE.
   const setButtons = [
+    { icon: icoALA, setCode: "ALA", alt: "Shards of Alara" },
+    { icon: icoARB, setCode: "ARB", alt: "Alara Reborn" },
+    { icon: icoCON, setCode: "CON", alt: "Conflux" },
+    { icon: icoMRD, setCode: "MRD", alt: "Mirrodin" },
     { icon: icoMIB, setCode: "MIB", alt: "Mirrodin besieged Icon" },
     { icon: icoSOM, setCode: "SOM", alt: "Scars if Mirrodin" },
     { icon: icoNPH, setCode: "NPH", alt: "New Phyrexia Icon" },
@@ -41,15 +57,23 @@ function Navigator(props: navigatorProps) {
     { icon: icoAMO, setCode: "AMO", alt: "Amonkhet Icon" },
     { icon: icoGOR, setCode: "GOR", alt: "Guilds of Ravnica Icon" },
     { icon: icoMAO, setCode: "MAO", alt: "Magic Origins Icon" },
-    { icon: icoOAT, setCode: "OAT", alt: "Oath of the Gatewatch Icon" },
-    { icon: icoZER, setCode: "ZER", alt: "Zendikar rising Icon" },
-    { icon: icoBFZ, setCode: "BFZ", alt: "Battle for Zendikar Icon" },
     { icon: icoKLD, setCode: "KLD", alt: "Kaldheim Icon" },
     { icon: icoKAL, setCode: "KAL", alt: "Kaladesh Icon" },
     { icon: icoDOM, setCode: "DOM", alt: "Dominaria Icon" },
     { icon: icoWOS, setCode: "WOS", alt: "War of the spark" },
-    { icon: icoMRD, setCode: "MRD", alt: "Mirrodin" },
     { icon: icoLRW, setCode: "LRW", alt: "Lorwyn" },
+    { icon: icoEVE, setCode: "EVE", alt: "Eventide" },
+    { icon: icoMOR, setCode: "MOR", alt: "Morningtide" },
+    { icon: icoSHM, setCode: "SHM", alt: "Shadowmoor" },
+    { icon: icoCHK, setCode: "CHK", alt: "Champions of Kamigawa" },
+    { icon: icoSOK, setCode: "SOK", alt: "Saviors of Kamigawa" },
+    { icon: icoBOK, setCode: "BOK", alt: "Betrayers of Kamigawa" },
+    { icon: icoZEN, setCode: "ZEN", alt: "Zendikar" },
+    { icon: icoWWK, setCode: "WWK", alt: "WorldWake" },
+    { icon: icoROE, setCode: "ROE", alt: "Rise of the Eldrazi" },
+    { icon: icoOAT, setCode: "OAT", alt: "Oath of the Gatewatch Icon" },
+    { icon: icoZER, setCode: "ZER", alt: "Zendikar rising Icon" },
+    { icon: icoBFZ, setCode: "BFZ", alt: "Battle for Zendikar Icon" },
     { icon: icoTHS, setCode: "THS", alt: "Theros" },
   ];
   const amountsOject = props.cardAmounts.amounts;
