@@ -1,24 +1,35 @@
+import React from "react";
 import CardZoom from "./CardZoom";
 import DBActualDeck from "./DeckBMain/DBActualDeck";
 import DBCardList from "./DeckBMain/DBCardList";
 import DBStats from "./DeckBMain/DBStats";
 import "./DeckBMain.css";
+import { cardData } from "../DeckBuilder";
+
 interface DBMainProps {
   zoomCard: string;
-  filteredCards: string[];
-  deck: number[];
+  filteredCards: cardData[];
   type: string;
+  setZoomCard: React.Dispatch<React.SetStateAction<string>>;
 }
 
 function DeckBMain(props: DBMainProps) {
+  const [deck, setDeck] = React.useState<cardData[] | []>([]);
   return (
     <main className="container-fluid">
-      <div className="row ml-2 mr-4 flex-nowrap p-0 m-0">
-        <DBCardList filteredCards={props.filteredCards} />
-        <DBStats deck={props.deck} type={props.type} />
+      <div
+        className="row ml-2 mr-4 flex-nowrap p-0 m-0"
+        style={{ height: "50vh" }}
+      >
+        <DBCardList
+          filteredCards={props.filteredCards}
+          setZoomCard={props.setZoomCard}
+          setDeck={setDeck}
+        />
+        <DBStats deck={deck} type={props.type} />
         <CardZoom zoomCard={props.zoomCard} />
       </div>
-      <DBActualDeck deck={props.deck} />
+      <DBActualDeck deck={deck} />
     </main>
   );
 }

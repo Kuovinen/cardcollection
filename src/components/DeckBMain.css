@@ -22,3 +22,7 @@
   border: 0.1rem white solid;
   color: rgb(93, 53, 107);
 }
+.actualDeck > div {
+  height: 5.7rem;
+  width: 4rem;
+}

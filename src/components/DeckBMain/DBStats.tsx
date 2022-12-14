@@ -1,7 +1,8 @@
 import React from "react";
+import { cardData } from "../../DeckBuilder";
 
 interface DBCardList {
-  deck: number[];
+  deck: cardData[];
   type: string;
 }
 function DBStats(props: DBCardList) {
