@@ -40,11 +40,12 @@ const getSetDataWC = (request, response) => {
 };
 //send specific sets data with color info
 const getFilteredCards = (request, response) => {
-  const { set, white, blue, black, red, green } = request.body;
-
+  const { set, white, blue, black, red, green, name } = request.body;
+  console.log(name);
   console.log(request.body);
+  const nameAddOn = name !== "" ? `AND LOWER(name) Like '%${name}%'` : "";
   pool.query(
-    `SELECT set,number,name,amount FROM card WHERE set='${set}' AND (white=${white} OR blue=${blue} OR black=${black} OR red=${red} OR green=${green})`,
+    `SELECT set,number,name,amount FROM card WHERE set='${set}' AND (white=${white} OR blue=${blue} OR black=${black} OR red=${red} OR green=${green}) ${nameAddOn}`,
     (error, results) => {
       if (error) {
         throw error;

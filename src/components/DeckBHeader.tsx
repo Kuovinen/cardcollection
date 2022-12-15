@@ -9,6 +9,7 @@ interface DeckBHeaderProps {
 
 function DeckBHeader(props: DeckBHeaderProps) {
   const [set, setSet] = React.useState("IN1");
+  const [cardName, setCardName] = React.useState("");
   const [iconsData, setIconsData] = React.useState({
     white: { path: "/assets/w.svg", filter: false },
     blue: { path: "/assets/u.svg", filter: false },
@@ -31,6 +32,7 @@ function DeckBHeader(props: DeckBHeaderProps) {
     const data = await fetch("http://localhost:3500/filter", {
       method: "post",
       body: JSON.stringify({
+        name: cardName,
         set: set,
         white: iconsData.white.filter,
         blue: iconsData.blue.filter,
@@ -43,6 +45,9 @@ function DeckBHeader(props: DeckBHeaderProps) {
     const dataParsed = await data.json();
     props.setFilteredCards(() => dataParsed);
     console.log(dataParsed);
+  }
+  function onInput(e: React.ChangeEvent<HTMLInputElement>) {
+    setCardName(() => e.target.value);
   }
   /////////////////////////////////////////MAKE MANA ICON BUTTONS FOR THE FILTER
   function makeIconElements() {
@@ -89,10 +94,19 @@ function DeckBHeader(props: DeckBHeaderProps) {
     </button>
   ));
   const iconElements = makeIconElements();
+  //////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////COMPONENT RETURN
+  //////////////////////////////////////////////////////////////////////////////
   return (
     <header className="container-fluid">
       <div className="row">
-        <input className="ml-3" type="text" placeholder="deck name" />{" "}
+        <input
+          className="ml-3"
+          type="text"
+          placeholder="Name:"
+          onChange={(e) => onInput(e)}
+          value={cardName}
+        />{" "}
         <div className="filters">{iconElements}</div>
         <div className="stats text-light">
           <button onClick={() => getCardAmounts()}>GET CARDS</button>
