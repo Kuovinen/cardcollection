@@ -1,5 +1,6 @@
 import React from "react";
 import { cardData } from "../DeckBuilder";
+import { setButtons } from "./Navigator";
 interface DeckBHeaderProps {
   type: string;
   setType: React.Dispatch<React.SetStateAction<string>>;
@@ -7,6 +8,7 @@ interface DeckBHeaderProps {
 }
 
 function DeckBHeader(props: DeckBHeaderProps) {
+  const [set, setSet] = React.useState("IN1");
   const [iconsData, setIconsData] = React.useState({
     white: { path: "/assets/w.svg", filter: false },
     blue: { path: "/assets/u.svg", filter: false },
@@ -20,12 +22,16 @@ function DeckBHeader(props: DeckBHeaderProps) {
       props.type === "Normal Deck" ? "Commander Deck" : "Normal Deck"
     );
   }
+  //////////////////////////////////////////////////////////////////CHANGE SET
+  function changeSet(set: string) {
+    setSet(() => set);
+  }
   //////////////////////////////////////////////////////////////////get SQL data
   async function getCardAmounts() {
     const data = await fetch("http://localhost:3500/filter", {
       method: "post",
       body: JSON.stringify({
-        set: "ROE",
+        set: set,
         white: iconsData.white.filter,
         blue: iconsData.blue.filter,
         black: iconsData.black.filter,
@@ -72,6 +78,16 @@ function DeckBHeader(props: DeckBHeaderProps) {
       />
     ));
   }
+  const setIcons = setButtons.map((element, index) => (
+    <button key={index /*never intended to be changed*/} className="setIcon">
+      <img
+        src={element.icon}
+        onClick={() => changeSet(element.setCode)}
+        alt={element.alt}
+        style={{ opacity: element.setCode === set ? "1" : "0.35" }}
+      />
+    </button>
+  ));
   const iconElements = makeIconElements();
   return (
     <header className="container-fluid">
@@ -87,6 +103,7 @@ function DeckBHeader(props: DeckBHeaderProps) {
           <br />
         </div>
       </div>
+      <div> {setIcons}</div>
       <span className="font-weight-bold text-light">{props.type}</span>
     </header>
   );

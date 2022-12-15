@@ -42,50 +42,50 @@ interface navigatorProps {
   setName: string;
   cardAmounts: cardAmounts;
 }
-
+export const setButtons = [
+  { icon: icoALA, setCode: "ALA", alt: "Shards of Alara" },
+  { icon: icoARB, setCode: "ARB", alt: "Alara Reborn" },
+  { icon: icoCON, setCode: "CON", alt: "Conflux" },
+  { icon: icoMRD, setCode: "MRD", alt: "Mirrodin" },
+  { icon: icoMIB, setCode: "MIB", alt: "Mirrodin besieged Icon" },
+  { icon: icoSOM, setCode: "SOM", alt: "Scars if Mirrodin" },
+  { icon: icoNPH, setCode: "NPH", alt: "New Phyrexia Icon" },
+  { icon: icoIN1, setCode: "IN1", alt: "Avacyne Restored Icon" },
+  { icon: icoIN4, setCode: "IN4", alt: "Eldritch Moon Icon" },
+  { icon: icoIN5, setCode: "IN5", alt: "Shadow Over Innistrad Icon" },
+  { icon: icoAMO, setCode: "AMO", alt: "Amonkhet Icon" },
+  { icon: icoGOR, setCode: "GOR", alt: "Guilds of Ravnica Icon" },
+  { icon: icoMAO, setCode: "MAO", alt: "Magic Origins Icon" },
+  { icon: icoKLD, setCode: "KLD", alt: "Kaldheim Icon" },
+  { icon: icoKAL, setCode: "KAL", alt: "Kaladesh Icon" },
+  { icon: icoDOM, setCode: "DOM", alt: "Dominaria Icon" },
+  { icon: icoWOS, setCode: "WOS", alt: "War of the spark" },
+  { icon: icoLRW, setCode: "LRW", alt: "Lorwyn" },
+  { icon: icoEVE, setCode: "EVE", alt: "Eventide" },
+  { icon: icoMOR, setCode: "MOR", alt: "Morningtide" },
+  { icon: icoSHM, setCode: "SHM", alt: "Shadowmoor" },
+  { icon: icoCHK, setCode: "CHK", alt: "Champions of Kamigawa" },
+  { icon: icoSOK, setCode: "SOK", alt: "Saviors of Kamigawa" },
+  { icon: icoBOK, setCode: "BOK", alt: "Betrayers of Kamigawa" },
+  { icon: icoZEN, setCode: "ZEN", alt: "Zendikar" },
+  { icon: icoWWK, setCode: "WWK", alt: "WorldWake" },
+  { icon: icoROE, setCode: "ROE", alt: "Rise of the Eldrazi" },
+  { icon: icoOAT, setCode: "OAT", alt: "Oath of the Gatewatch Icon" },
+  { icon: icoZER, setCode: "ZER", alt: "Zendikar rising Icon" },
+  { icon: icoBFZ, setCode: "BFZ", alt: "Battle for Zendikar Icon" },
+  { icon: icoTHS, setCode: "THS", alt: "Theros" },
+  { icon: icoBNG, setCode: "BNG", alt: "Bord of the gods" },
+  { icon: icoJOU, setCode: "JOU", alt: "Journey into Nyx" },
+  { icon: icoTHB, setCode: "THB", alt: "Theres beyond death" },
+  { icon: icoSTX, setCode: "STX", alt: "Strixhaven" },
+  { icon: icoELD, setCode: "ELD", alt: "Throne of Eldraine" },
+];
 function Navigator(props: navigatorProps) {
   function changeSet(code: string) {
     props.getCardAmounts(code);
   }
   //TO ADD A NEW SET ADD DATA TO THE SETBUTTONS VARIABLE. ALL ELSE IS FINE.
-  const setButtons = [
-    { icon: icoALA, setCode: "ALA", alt: "Shards of Alara" },
-    { icon: icoARB, setCode: "ARB", alt: "Alara Reborn" },
-    { icon: icoCON, setCode: "CON", alt: "Conflux" },
-    { icon: icoMRD, setCode: "MRD", alt: "Mirrodin" },
-    { icon: icoMIB, setCode: "MIB", alt: "Mirrodin besieged Icon" },
-    { icon: icoSOM, setCode: "SOM", alt: "Scars if Mirrodin" },
-    { icon: icoNPH, setCode: "NPH", alt: "New Phyrexia Icon" },
-    { icon: icoIN1, setCode: "IN1", alt: "Avacyne Restored Icon" },
-    { icon: icoIN4, setCode: "IN4", alt: "Eldritch Moon Icon" },
-    { icon: icoIN5, setCode: "IN5", alt: "Shadow Over Innistrad Icon" },
-    { icon: icoAMO, setCode: "AMO", alt: "Amonkhet Icon" },
-    { icon: icoGOR, setCode: "GOR", alt: "Guilds of Ravnica Icon" },
-    { icon: icoMAO, setCode: "MAO", alt: "Magic Origins Icon" },
-    { icon: icoKLD, setCode: "KLD", alt: "Kaldheim Icon" },
-    { icon: icoKAL, setCode: "KAL", alt: "Kaladesh Icon" },
-    { icon: icoDOM, setCode: "DOM", alt: "Dominaria Icon" },
-    { icon: icoWOS, setCode: "WOS", alt: "War of the spark" },
-    { icon: icoLRW, setCode: "LRW", alt: "Lorwyn" },
-    { icon: icoEVE, setCode: "EVE", alt: "Eventide" },
-    { icon: icoMOR, setCode: "MOR", alt: "Morningtide" },
-    { icon: icoSHM, setCode: "SHM", alt: "Shadowmoor" },
-    { icon: icoCHK, setCode: "CHK", alt: "Champions of Kamigawa" },
-    { icon: icoSOK, setCode: "SOK", alt: "Saviors of Kamigawa" },
-    { icon: icoBOK, setCode: "BOK", alt: "Betrayers of Kamigawa" },
-    { icon: icoZEN, setCode: "ZEN", alt: "Zendikar" },
-    { icon: icoWWK, setCode: "WWK", alt: "WorldWake" },
-    { icon: icoROE, setCode: "ROE", alt: "Rise of the Eldrazi" },
-    { icon: icoOAT, setCode: "OAT", alt: "Oath of the Gatewatch Icon" },
-    { icon: icoZER, setCode: "ZER", alt: "Zendikar rising Icon" },
-    { icon: icoBFZ, setCode: "BFZ", alt: "Battle for Zendikar Icon" },
-    { icon: icoTHS, setCode: "THS", alt: "Theros" },
-    { icon: icoBNG, setCode: "BNG", alt: "Bord of the gods" },
-    { icon: icoJOU, setCode: "JOU", alt: "Journey into Nyx" },
-    { icon: icoTHB, setCode: "THB", alt: "Theres beyond death" },
-    { icon: icoSTX, setCode: "STX", alt: "Strixhaven" },
-    { icon: icoELD, setCode: "ELD", alt: "Throne of Eldraine" },
-  ];
+
   const amountsOject = props.cardAmounts.amounts;
   const totalCardNumber = Object.keys(amountsOject).length;
   const cardsGathered = Object.keys(amountsOject).filter(

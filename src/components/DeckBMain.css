@@ -26,3 +26,15 @@
   height: 5.7rem;
   width: 4rem;
 }
+.setIcon {
+  filter: grayscale(0%);
+  background: none;
+  border: none;
+}
+.setIcon:hover {
+  filter: grayscale(100%) brightness(150%);
+}
+.setIcon:active {
+  outline: none;
+  transform: scale(0.9);
+}
