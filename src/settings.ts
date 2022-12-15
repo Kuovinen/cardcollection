@@ -235,5 +235,40 @@ const settings: settingsType = {
     breaks: [37, 74, 109, 147, 184, 223],
     bSided: [],
   },
+  BNG: {
+    code: "BNG",
+    path: "BNG_BORN_OF_THE_GODS",
+    cardsTotal: 165,
+    breaks: [29, 57, 86, 115, 143, 156],
+    bSided: [],
+  },
+  JOU: {
+    code: "JOU",
+    path: "JOU_JOURNEY_INTO_NYX",
+    cardsTotal: 249,
+    breaks: [],
+    bSided: [],
+  },
+  THB: {
+    code: "THB",
+    path: "THB_THEROS_BEYOND_DEATH",
+    cardsTotal: 297,
+    breaks: [41, 82, 123, 164, 205, 230, 241, 254, 268, 277, 287],
+    bSided: [],
+  },
+  STX: {
+    code: "STX",
+    path: "STX_STRIXHAVEN",
+    cardsTotal: 276,
+    breaks: [35, 62, 90, 118, 148, 250, 261],
+    bSided: [],
+  },
+  ELD: {
+    code: "ELD",
+    path: "ELD_THRONE_OF_ELDRAINE",
+    cardsTotal: 269,
+    breaks: [37, 74, 111, 148, 185, 215, 237],
+    bSided: [],
+  },
 };
 export default settings;

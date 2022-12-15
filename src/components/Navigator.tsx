@@ -20,6 +20,8 @@ import icoMOR from "../icoMOR.png";
 import icoSHM from "../icoSHM.png";
 import icoMRD from "../icoMRD.png";
 import icoTHS from "../icoTHS.png";
+import icoTHB from "../icoTHB.png";
+import icoBNG from "../icoBNG.png";
 import icoCHK from "../icoCHK.png";
 import icoSOK from "../icoSOK.png";
 import icoBOK from "../icoBOK.png";
@@ -29,6 +31,8 @@ import icoWWK from "../icoWWK.png";
 import icoALA from "../icoALA.png";
 import icoARB from "../icoARB.png";
 import icoCON from "../icoCON.png";
+import icoSTX from "../icoSTX.png";
+import icoELD from "../icoELD.png";
 import React from "react";
 import "./Navigator.css";
 import { cardAmounts } from "../Collector";
@@ -75,6 +79,10 @@ function Navigator(props: navigatorProps) {
     { icon: icoZER, setCode: "ZER", alt: "Zendikar rising Icon" },
     { icon: icoBFZ, setCode: "BFZ", alt: "Battle for Zendikar Icon" },
     { icon: icoTHS, setCode: "THS", alt: "Theros" },
+    { icon: icoTHB, setCode: "THB", alt: "Theres beyond death" },
+    { icon: icoBNG, setCode: "BNG", alt: "Bord of the gods" },
+    { icon: icoSTX, setCode: "STX", alt: "Strixhaven" },
+    { icon: icoELD, setCode: "ELD", alt: "Throne of Eldraine" },
   ];
   const amountsOject = props.cardAmounts.amounts;
   const totalCardNumber = Object.keys(amountsOject).length;
