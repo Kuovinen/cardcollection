@@ -103,12 +103,12 @@ function DeckBHeader(props: DeckBHeaderProps) {
     <header className="container-fluid">
       <div className="row">
         <input
-          className="ml-3"
+          className="ml-3 cardNameInput"
           type="text"
           placeholder="Name:"
           onChange={(e) => onInput(e)}
           value={cardName}
-        />{" "}
+        />
         <div className="filters">{iconElements}</div>
         <div className="stats text-light">
           <button onClick={() => getCardAmounts()}>GET CARDS</button>
