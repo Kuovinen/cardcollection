@@ -245,8 +245,8 @@ const settings: settingsType = {
   JOU: {
     code: "JOU",
     path: "JOU_JOURNEY_INTO_NYX",
-    cardsTotal: 249,
-    breaks: [],
+    cardsTotal: 165,
+    breaks: [29, 58, 87, 116, 144, 158],
     bSided: [],
   },
   THB: {

@@ -21,6 +21,7 @@ import icoSHM from "../icoSHM.png";
 import icoMRD from "../icoMRD.png";
 import icoTHS from "../icoTHS.png";
 import icoTHB from "../icoTHB.png";
+import icoJOU from "../icoJOU.png";
 import icoBNG from "../icoBNG.png";
 import icoCHK from "../icoCHK.png";
 import icoSOK from "../icoSOK.png";
@@ -79,8 +80,9 @@ function Navigator(props: navigatorProps) {
     { icon: icoZER, setCode: "ZER", alt: "Zendikar rising Icon" },
     { icon: icoBFZ, setCode: "BFZ", alt: "Battle for Zendikar Icon" },
     { icon: icoTHS, setCode: "THS", alt: "Theros" },
-    { icon: icoTHB, setCode: "THB", alt: "Theres beyond death" },
     { icon: icoBNG, setCode: "BNG", alt: "Bord of the gods" },
+    { icon: icoJOU, setCode: "JOU", alt: "Journey into Nyx" },
+    { icon: icoTHB, setCode: "THB", alt: "Theres beyond death" },
     { icon: icoSTX, setCode: "STX", alt: "Strixhaven" },
     { icon: icoELD, setCode: "ELD", alt: "Throne of Eldraine" },
   ];
