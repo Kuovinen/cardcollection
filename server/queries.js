@@ -43,9 +43,10 @@ const getFilteredCards = (request, response) => {
   const { set, white, blue, black, red, green, name } = request.body;
   console.log(name);
   console.log(request.body);
-  const nameAddOn = name !== "" ? `AND LOWER(name) Like '%${name}%'` : "";
+  const nameOrSetAddOn =
+    name !== "" ? `AND LOWER(name) LIKE '%${name}%'` : `AND set='${set}'`;
   pool.query(
-    `SELECT set,number,name,amount FROM card WHERE set='${set}' AND (white=${white} OR blue=${blue} OR black=${black} OR red=${red} OR green=${green}) ${nameAddOn}`,
+    `SELECT set,number,name,amount FROM card WHERE  (white=${white} OR blue=${blue} OR black=${black} OR red=${red} OR green=${green}) ${nameOrSetAddOn}`,
     (error, results) => {
       if (error) {
         throw error;
@@ -55,7 +56,7 @@ const getFilteredCards = (request, response) => {
   );
 
   console.log(
-    `GOT QUREY |||: SELECT set,number,name,amount FROM card WHERE set='${set}' AND (white=${white} OR blue=${blue} OR black=${black} OR red=${red} OR green=${green})`
+    `GOT QUREY |||: SELECT set,number,name,amount FROM card WHERE  (white=${white} OR blue=${blue} OR black=${black} OR red=${red} OR green=${green}) ${nameOrSetAddOn}`
   );
 };
 //send all sets data

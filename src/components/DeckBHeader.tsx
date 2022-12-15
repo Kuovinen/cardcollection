@@ -47,7 +47,7 @@ function DeckBHeader(props: DeckBHeaderProps) {
     console.log(dataParsed);
   }
   function onInput(e: React.ChangeEvent<HTMLInputElement>) {
-    setCardName(() => e.target.value);
+    setCardName(() => e.target.value.toLowerCase());
   }
   /////////////////////////////////////////MAKE MANA ICON BUTTONS FOR THE FILTER
   function makeIconElements() {
@@ -89,7 +89,9 @@ function DeckBHeader(props: DeckBHeaderProps) {
         src={element.icon}
         onClick={() => changeSet(element.setCode)}
         alt={element.alt}
-        style={{ opacity: element.setCode === set ? "1" : "0.35" }}
+        style={{
+          opacity: element.setCode === set && cardName === "" ? "1" : "0.35",
+        }}
       />
     </button>
   ));
