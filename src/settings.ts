@@ -155,21 +155,21 @@ const settings: settingsType = {
     code: "SHM",
     path: "SHM_SHADOWMOOR",
     cardsTotal: 245,
-    breaks: [49, 98, 147, 196, 245],
+    breaks: [27, 54, 81, 108, 135, 157, 179, 201, 223],
     bSided: [],
   },
   MOR: {
     code: "MOR",
     path: "MOR_MORNINGTIDE",
     cardsTotal: 140,
-    breaks: [49, 98, 147, 196, 245],
+    breaks: [28, 56, 84, 112],
     bSided: [],
   },
   CHK: {
     code: "CHK",
     path: "CHK_CHAMPIONS_OF_KAMIGAWA",
     cardsTotal: 306,
-    breaks: [],
+    breaks: [50, 100, 150, 200, 250],
     bSided: [],
   },
   SOK: {
@@ -183,7 +183,7 @@ const settings: settingsType = {
     code: "BOK",
     path: "BOK_BETRAYERS_OF_KAMIGAWA",
     cardsTotal: 165,
-    breaks: [],
+    breaks: [30, 60, 90, 120, 150],
     bSided: [],
   },
   ZEN: {
@@ -218,7 +218,7 @@ const settings: settingsType = {
     code: "ARB",
     path: "ARB_ALARA_REBORN",
     cardsTotal: 145,
-    breaks: [],
+    breaks: [15, 27, 32, 48, 64, 80, 85, 90, 95, 100, 106],
     bSided: [],
   },
   CON: {
