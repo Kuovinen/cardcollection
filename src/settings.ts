@@ -36,6 +36,20 @@ const settings: settingsType = {
     breaks: [26, 51, 77, 102, 127, 167],
     bSided: [],
   },
+  ISD: {
+    code: "ISD",
+    path: "ISD_INNISTRAD",
+    cardsTotal: 264,
+    breaks: [42, 84, 126, 168, 211],
+    bSided: [],
+  },
+  DKA: {
+    code: "DKA",
+    path: "DKA_DARK_ASCENSION",
+    cardsTotal: 158,
+    breaks: [26, 53, 80, 107, 134],
+    bSided: [],
+  },
   IN1: {
     code: "IN1",
     path: "IN1_AVACYN_RESTORED",
@@ -140,7 +154,7 @@ const settings: settingsType = {
   LRW: {
     code: "LRW",
     path: "LRW_LORWYN",
-    cardsTotal: 245,
+    cardsTotal: 301,
     breaks: [49, 98, 147, 196, 245],
     bSided: [],
   },
@@ -154,14 +168,14 @@ const settings: settingsType = {
   SHM: {
     code: "SHM",
     path: "SHM_SHADOWMOOR",
-    cardsTotal: 245,
+    cardsTotal: 301,
     breaks: [27, 54, 81, 108, 135, 157, 179, 201, 223],
     bSided: [],
   },
   MOR: {
     code: "MOR",
     path: "MOR_MORNINGTIDE",
-    cardsTotal: 140,
+    cardsTotal: 150,
     breaks: [28, 56, 84, 112],
     bSided: [],
   },

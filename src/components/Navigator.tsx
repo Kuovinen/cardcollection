@@ -34,6 +34,8 @@ import icoARB from "../icoARB.png";
 import icoCON from "../icoCON.png";
 import icoSTX from "../icoSTX.png";
 import icoELD from "../icoELD.png";
+import icoDKA from "../icoDKA.png";
+import icoISD from "../icoISD.png";
 import React from "react";
 import "./Navigator.css";
 import { cardAmounts } from "../Collector";
@@ -50,6 +52,8 @@ export const setButtons = [
   { icon: icoMIB, setCode: "MIB", alt: "Mirrodin besieged Icon" },
   { icon: icoSOM, setCode: "SOM", alt: "Scars if Mirrodin" },
   { icon: icoNPH, setCode: "NPH", alt: "New Phyrexia Icon" },
+  { icon: icoISD, setCode: "ISD", alt: "Innistrad" },
+  { icon: icoDKA, setCode: "DKA", alt: "Dark Ascension" },
   { icon: icoIN1, setCode: "IN1", alt: "Avacyne Restored Icon" },
   { icon: icoIN4, setCode: "IN4", alt: "Eldritch Moon Icon" },
   { icon: icoIN5, setCode: "IN5", alt: "Shadow Over Innistrad Icon" },
