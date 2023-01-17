@@ -190,7 +190,7 @@ const settings: settingsType = {
     code: "SOK",
     path: "SOK_SAVIORS_OF_KAMIGAWA",
     cardsTotal: 165,
-    breaks: [],
+    breaks: [30, 60, 90, 120, 150],
     bSided: [],
   },
   BOK: {
@@ -282,6 +282,13 @@ const settings: settingsType = {
     path: "ELD_THRONE_OF_ELDRAINE",
     cardsTotal: 269,
     breaks: [37, 74, 111, 148, 185, 215, 237],
+    bSided: [],
+  },
+  NEO: {
+    code: "NEO",
+    path: "NEO_KAMIGAWA_NEON_DYNASY",
+    cardsTotal: 302,
+    breaks: [43, 86, 129, 171, 214, 238, 263, 292],
     bSided: [],
   },
 };

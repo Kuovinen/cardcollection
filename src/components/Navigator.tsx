@@ -36,6 +36,7 @@ import icoSTX from "../icoSTX.png";
 import icoELD from "../icoELD.png";
 import icoDKA from "../icoDKA.png";
 import icoISD from "../icoISD.png";
+import icoNEO from "../icoNEO.png";
 import React from "react";
 import "./Navigator.css";
 import { cardAmounts } from "../Collector";
@@ -83,6 +84,7 @@ export const setButtons = [
   { icon: icoTHB, setCode: "THB", alt: "Theres beyond death" },
   { icon: icoSTX, setCode: "STX", alt: "Strixhaven" },
   { icon: icoELD, setCode: "ELD", alt: "Throne of Eldraine" },
+  { icon: icoNEO, setCode: "NEO", alt: "Kamigawa:Neon Dynasty" },
 ];
 function Navigator(props: navigatorProps) {
   function changeSet(code: string) {
