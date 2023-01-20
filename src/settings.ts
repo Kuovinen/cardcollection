@@ -291,5 +291,19 @@ const settings: settingsType = {
     breaks: [43, 86, 129, 171, 214, 238, 263, 292],
     bSided: [],
   },
+  DMU: {
+    code: "DMU",
+    path: "DMU_DOMINARIA_UNITED",
+    cardsTotal: 281,
+    breaks: [39, 77, 115, 153, 191, 229, 242],
+    bSided: [],
+  },
+  BRO: {
+    code: "BRO",
+    path: "BRO_BROTHERS_WAR",
+    cardsTotal: 287,
+    breaks: [42, 83, 125, 165, 205, 228, 256],
+    bSided: [],
+  },
 };
 export default settings;
