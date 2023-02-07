@@ -12,9 +12,7 @@ const getSetData = (request, response) => {
 
   console.log(set);
   pool.query(
-    `SELECT set,number,amount FROM card WHERE set='${
-      set === "K40" ? "40K" : set
-    }'`,
+    `SELECT set,number,amount FROM card WHERE set='${set}'`,
     (error, results) => {
       if (error) {
         throw error;

@@ -327,7 +327,7 @@ const settings: settingsType = {
     bSided: [],
   },
   K40: {
-    code: "40K",
+    code: "K40",
     path: "K40_COMMANDER",
     cardsTotal: 168,
     breaks: [0],

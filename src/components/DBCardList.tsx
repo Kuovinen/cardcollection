@@ -24,8 +24,9 @@ function DBActualDeck(props: DBCardList) {
     );
   }
   function setZoom(card: cardData) {
-    const set = card.set === "40K" ? "K40" : card.set;
-    const path = `/assets/${settingsType[set].path}/${card.set}_${card.number}.jpg`;
+    const path = `/assets/${settingsType[card.set].path}/${card.set}_${
+      card.number
+    }.jpg`;
     props.setZoomCard(path);
   }
   function addToDeck(card: cardData) {

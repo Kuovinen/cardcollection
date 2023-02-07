@@ -11,11 +11,11 @@ function DeckBHeader(props: DeckBHeaderProps) {
   const [set, setSet] = React.useState("IN1");
   const [cardName, setCardName] = React.useState("");
   const [iconsData, setIconsData] = React.useState({
-    white: { path: "/assets/w.svg", filter: false },
-    blue: { path: "/assets/u.svg", filter: false },
-    black: { path: "/assets/b.svg", filter: false },
-    red: { path: "/assets/r.svg", filter: false },
-    green: { path: "/assets/g.svg", filter: false },
+    white: { path: "/assets/w.svg", filter: true },
+    blue: { path: "/assets/u.svg", filter: true },
+    black: { path: "/assets/b.svg", filter: true },
+    red: { path: "/assets/r.svg", filter: true },
+    green: { path: "/assets/g.svg", filter: true },
   });
   ///////////////////////////////////////CHANGE DECK TYPE -> COMMANDER OR NORMAL
   function changeType() {
@@ -28,7 +28,10 @@ function DeckBHeader(props: DeckBHeaderProps) {
     setSet(() => set);
   }
   //////////////////////////////////////////////////////////////////get SQL data
-  async function getCardAmounts() {
+  async function getCardAmounts(
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) {
+    e.preventDefault();
     const data = await fetch("http://localhost:3500/filter", {
       method: "post",
       body: JSON.stringify({
@@ -48,6 +51,10 @@ function DeckBHeader(props: DeckBHeaderProps) {
   }
   function onInput(e: React.ChangeEvent<HTMLInputElement>) {
     setCardName(() => e.target.value.toLowerCase());
+  }
+  /////////////////////////////////////////HANDLE INPUT FILED ENTER PRESS
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
   }
   /////////////////////////////////////////MAKE MANA ICON BUTTONS FOR THE FILTER
   function makeIconElements() {
@@ -102,22 +109,29 @@ function DeckBHeader(props: DeckBHeaderProps) {
   return (
     <header className="container-fluid">
       <div className="row">
-        <input
-          className="ml-3 cardNameInput"
-          type="text"
-          placeholder="Name:"
-          onChange={(e) => onInput(e)}
-          value={cardName}
-        />
-        <div className="filters">{iconElements}</div>
-        <div className="stats text-light">
-          <button onClick={() => getCardAmounts()}>GET CARDS</button>
-          <button className="deckSwich modSwitchBtn" onClick={changeType}>
-            Change Type
-          </button>
+        <form className="ml-3 mr-2" onSubmit={(e) => handleSubmit(e)}>
+          <input
+            className="cardNameInput"
+            type="text"
+            placeholder="Name:"
+            onChange={(e) => onInput(e)}
+            value={cardName}
+          />
+          <div className="stats text-light d-flex w-100 justify-content-between">
+            <button
+              className="deckSwich modSwitchBtn"
+              onClick={(e) => getCardAmounts(e)}
+            >
+              GET CARDS
+            </button>
+            <button className="deckSwich modSwitchBtn" onClick={changeType}>
+              Change Type
+            </button>
 
-          <br />
-        </div>
+            <br />
+          </div>
+        </form>
+        <div className="filters">{iconElements}</div>
       </div>
       <div> {setIcons}</div>
       <span className="font-weight-bold text-light">{props.type}</span>
