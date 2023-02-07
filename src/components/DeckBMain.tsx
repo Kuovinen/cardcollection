@@ -1,8 +1,8 @@
 import React from "react";
 import CardZoom from "./CardZoom";
-import DBActualDeck from "./DeckBMain/DBActualDeck";
-import DBCardList from "./DeckBMain/DBCardList";
-import DBStats from "./DeckBMain/DBStats";
+import DBActualDeck from "./DBActualDeck";
+import DBCardList from "./DBCardList";
+import DBStats from "./DBStats";
 import "./DeckBMain.css";
 import { cardData } from "../DeckBuilder";
 
@@ -15,6 +15,7 @@ interface DBMainProps {
 
 function DeckBMain(props: DBMainProps) {
   const [deck, setDeck] = React.useState<cardData[] | []>([]);
+  console.log(props.filteredCards);
   return (
     <main className="container-fluid">
       <div

@@ -71,6 +71,20 @@ const settings: settingsType = {
     breaks: [48, 96, 144, 192, 240, 269],
     bSided: [],
   },
+  MID: {
+    code: "MID",
+    path: "MID_MIDNIGHT_HUNT",
+    cardsTotal: 277,
+    breaks: [41, 83, 126, 167, 208, 251, 260],
+    bSided: [],
+  },
+  VOW: {
+    code: "VOW",
+    path: "VOW_CRIMSON_VOW",
+    cardsTotal: 277,
+    breaks: [46, 91, 138, 184, 229, 251, 260],
+    bSided: [],
+  },
   GOR: {
     code: "GOR",
     path: "GOR_GUILDS_OF_RAVNICA",
@@ -303,6 +317,20 @@ const settings: settingsType = {
     path: "BRO_BROTHERS_WAR",
     cardsTotal: 287,
     breaks: [42, 83, 125, 165, 205, 228, 256],
+    bSided: [],
+  },
+  ONE: {
+    code: "ONE",
+    path: "ONE_ALL_WILL_BE_ONE",
+    cardsTotal: 271,
+    breaks: [39, 78, 116, 156, 195, 221, 246],
+    bSided: [],
+  },
+  K40: {
+    code: "40K",
+    path: "K40_COMMANDER",
+    cardsTotal: 168,
+    breaks: [0],
     bSided: [],
   },
 };

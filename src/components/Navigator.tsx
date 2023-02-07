@@ -39,6 +39,10 @@ import icoISD from "../icoISD.png";
 import icoNEO from "../icoNEO.png";
 import icoDMU from "../icoDMU.png";
 import icoBRO from "../icoBRO.png";
+import icoONE from "../icoONE.png";
+import icoVOW from "../icoVOW.png";
+import icoMID from "../icoMID.png";
+import ico40K from "../ico40K.png";
 import React from "react";
 import "./Navigator.css";
 import { cardAmounts } from "../Collector";
@@ -60,6 +64,8 @@ export const setButtons = [
   { icon: icoIN1, setCode: "IN1", alt: "Avacyne Restored Icon" },
   { icon: icoIN4, setCode: "IN4", alt: "Eldritch Moon Icon" },
   { icon: icoIN5, setCode: "IN5", alt: "Shadow Over Innistrad Icon" },
+  { icon: icoMID, setCode: "MID", alt: "Midnight hunt" },
+  { icon: icoVOW, setCode: "VOW", alt: "Crimson vow" },
   { icon: icoAMO, setCode: "AMO", alt: "Amonkhet Icon" },
   { icon: icoGOR, setCode: "GOR", alt: "Guilds of Ravnica Icon" },
   { icon: icoMAO, setCode: "MAO", alt: "Magic Origins Icon" },
@@ -89,6 +95,8 @@ export const setButtons = [
   { icon: icoNEO, setCode: "NEO", alt: "Kamigawa:Neon Dynasty" },
   { icon: icoDMU, setCode: "DMU", alt: "Dominaria United" },
   { icon: icoBRO, setCode: "BRO", alt: "Brothers War" },
+  { icon: icoONE, setCode: "ONE", alt: "All will be one" },
+  { icon: ico40K, setCode: "K40", alt: "40K Commander" },
 ];
 function Navigator(props: navigatorProps) {
   function changeSet(code: string) {
