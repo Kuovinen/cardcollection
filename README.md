@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# To create/rereate own working connection we need a user for the DB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## For simplicity I use "me" as a username and 'psw' as password (used in server queries settings)
 
-## Available Scripts
+IN CMD:
+//to connect
+psql -u postgres
 
-In the project directory, you can run:
+//to make the db itself (copy contents from sql dump backup instructions below)
+postgres=# create database mtg;
 
-### `npm start`
+postgres=# create user me with encrypted password 'psw';
+postgres=# grant all privileges on database mtg to me; //THIS did not work but
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+\c mtg //and after that:
+GRANT ALL PRIVILEGES ON TABLE side_adzone TO jerry;
+//does make the server connect to the db.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+//NOTE! The server on localhost:3500 cannot query the db directly as a test, because
+the query lacks the set data string that the front end provides
 
-### `npm test`
+### USING/MAKING the backup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+HOW TO MAKE:
 
-### `npm run build`
+Open Powershell
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Go to Postgres bin folder. For example:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+cd "C:\Program Files\PostgreSQL\14\bin"
+Enter the command to dump your database. For example:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+pg_dump.exe -U postgres -d my_database_name -f D:\Backup\backup-file-name.sql
+Type password for your postgres user
 
-### `npm run eject`
+HOW TO RESTORE:
+CREATE DATABASE dbname; //in my case dbname = mtg
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+in cmd, whithout even logging into psql:
+psql -U user db_name < /directory/archive.sql //in my case:"" psql -U user mtg < C:\Users\UName\mtgDB.sql ""

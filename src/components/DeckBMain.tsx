@@ -15,7 +15,6 @@ interface DBMainProps {
 
 function DeckBMain(props: DBMainProps) {
   const [deck, setDeck] = React.useState<cardData[] | []>([]);
-  console.log(props.filteredCards);
   return (
     <main className="container-fluid">
       <div
