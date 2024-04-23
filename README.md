@@ -1,4 +1,4 @@
-# To create/rereate own working connection we need a user for the DB
+# To create/recreate own working connection we need a user for the DB
 
 ## For simplicity I use "me" as a username and 'psw' as password (used in server queries settings)
 
